@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TituloNome">
+        <item name="android:padding">4dp</item>
+        <item name="android:textColor">#f48fb1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorHint">#f48fb1</item>
+        <item name="android:radioButtonStyle">#f48fb1</item>
+        <item name="android:buttonTint">#f48fb1</item>
+    </style>
+</resources>

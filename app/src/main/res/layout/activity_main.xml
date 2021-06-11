@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+
+    <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="A que setor pertence?" />-->
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:hint="Nome completo"
+        android:inputType="textPersonName"
+        style="@style/TituloNome"
+        app:layout_constraintBottom_toTopOf="@+id/edtCelular"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <EditText
+        android:id="@+id/edtCelular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:layout_marginTop="157dp"
+        android:hint="Celular"
+        android:inputType="phone"
+        style="@style/TituloNome"
+        app:layout_constraintBottom_toTopOf="@+id/rdgTipoPessoa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="24dp" />
+
+    <RadioGroup
+        android:id="@+id/rdgTipoPessoa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/edtreferencia"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865"
+        tools:layout_editor_absoluteX="24dp">
+
+        <RadioButton
+            android:id="@+id/rdPessoaFisica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            style="@style/TituloNome"
+            android:text="Pessoa Física" />
+
+        <RadioButton
+            android:id="@+id/rdPessoaJuridica"
+            android:layout_width="wrap_content"
+            style="@style/TituloNome"
+            android:layout_height="wrap_content"
+            android:text="Pessoa Jurídica" />
+
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edtreferencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:hint="Referência"
+        android:inputType="text"
+        android:visibility="visible"
+        style="@style/TituloNome"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/edtemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        style="@style/TituloNome"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/edtreferencia"
+        tools:layout_editor_absoluteX="24dp" />
+
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="80dp"
+        android:text="Salvar"
+        app:layout_constraintBottom_toTopOf="@+id/edtPesquisa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtPesquisa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        style="@style/TituloNome"
+        android:hint="Pesquise por contato"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/btnPesquisar"
+        tools:layout_editor_absoluteX="24dp" />
+
+    <Button
+        android:id="@+id/btnPesquisar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Pesquisar"
+        app:layout_constraintBottom_toTopOf="@+id/txtListagem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtListagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/TituloNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
