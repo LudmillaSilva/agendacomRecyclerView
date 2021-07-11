@@ -2,8 +2,8 @@
     <string name="app_name">agenda</string>
     <string name="nomeError">"Favor inserir um nome!"</string>
     <string name="telefoneError">"Favor inserir um telefone!"</string>
-        <string name="referenciaError">"Favor inserir uma referencia!"</string>
-        <string name="emailError">"Favor inserir um E-mail!"</string>
-        <string name="nomeSalvo">Contato %1$s salvo!</string>
-        <string name="pesquisaError">"Não foi possível encontrar o contato!"</string>
+    <string name="referenciaError">"Favor inserir uma referencia!"</string>
+    <string name="emailError">"Favor inserir um E-mail!"</string>
+    <string name="nomeSalvo">Contato %1$s salvo!</string>
+    <string name="pesquisaError">"Não foi possível encontrar o contato!"</string>
 </resources>

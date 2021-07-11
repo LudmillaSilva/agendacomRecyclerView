@@ -6,142 +6,134 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-     <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
+        android:paddingVertical="40dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
 
-    <!--<TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="A que setor pertence?" />-->
-
-    <EditText
-        android:id="@+id/edtNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:hint="Nome completo"
-        android:inputType="textPersonName"
-        style="@style/TituloNome"
-        app:layout_constraintBottom_toTopOf="@+id/edtCelular"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="32dp" />
-
-    <EditText
-        android:id="@+id/edtCelular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:layout_marginTop="157dp"
-        android:hint="Celular"
-        android:inputType="phone"
-        style="@style/TituloNome"
-        app:layout_constraintBottom_toTopOf="@+id/rdgTipoPessoa"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="24dp" />
-
-    <RadioGroup
-        android:id="@+id/rdgTipoPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/edtreferencia"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865"
-        tools:layout_editor_absoluteX="24dp">
-
-        <RadioButton
-            android:id="@+id/rdPessoaFisica"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
+        <TextView
+            android:id="@id/txtTitulo"
             style="@style/TituloNome"
-            android:text="Pessoa Física" />
-
-        <RadioButton
-            android:id="@+id/rdPessoaJuridica"
             android:layout_width="wrap_content"
-            style="@style/TituloNome"
             android:layout_height="wrap_content"
-            android:text="Pessoa Jurídica" />
+            android:text="Cadastro de novo contato"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtNome"
+            style="@style/TituloNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="64dp"
+            android:backgroundTint="@color/cor"
+            android:hint="Nome completo"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
+        <EditText
+            android:id="@+id/edtCelular"
+            style="@style/TituloNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="32dp"
+            android:backgroundTint="@color/cor"
+            android:hint="Celular"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+
+        <RadioGroup
+            android:id="@+id/rdgTipoPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCelular">
+
+            <RadioButton
+                android:id="@+id/rdPessoaFisica"
+                style="@style/TituloNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Pessoa Física" />
+
+            <RadioButton
+                android:id="@+id/rdPessoaJuridica"
+                style="@style/TituloNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pessoa Jurídica" />
 
 
-    </RadioGroup>
+        </RadioGroup>
 
-    <EditText
-        android:id="@+id/edtreferencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:hint="Referência"
-        android:inputType="text"
-        android:visibility="visible"
-        style="@style/TituloNome"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
-        tools:layout_editor_absoluteX="16dp" />
+        <EditText
+            android:id="@+id/edtreferencia"
+            style="@style/TituloNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/cor"
+            android:hint="Referência"
+            android:inputType="text"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rdgTipoPessoa" />
 
-    <EditText
-        android:id="@+id/edtemail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        style="@style/TituloNome"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/edtreferencia"
-        tools:layout_editor_absoluteX="24dp" />
-
-
-    <Button
-        android:id="@+id/btnCadastrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="80dp"
-        android:text="Salvar"
-        app:layout_constraintBottom_toTopOf="@+id/edtPesquisa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/edtPesquisa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        style="@style/TituloNome"
-        android:hint="Pesquise por contato"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/btnPesquisar"
-        tools:layout_editor_absoluteX="24dp" />
-
-    <Button
-        android:id="@+id/btnPesquisar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Pesquisar"
-        app:layout_constraintBottom_toTopOf="@+id/txtListagem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/edtemail"
+            style="@style/TituloNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/cor"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rdgTipoPessoa" />
 
 
-    <TextView
-        android:id="@+id/txtListagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/TituloNome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Salvar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="493dp" />
 
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- android:id="@+id/txtListagem"
+            style="@style/TituloNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />&ndash;&gt;
+-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

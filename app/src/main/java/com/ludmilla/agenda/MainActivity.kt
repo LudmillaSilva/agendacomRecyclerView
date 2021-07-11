@@ -1,12 +1,12 @@
 package com.ludmilla.agenda
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.View
 import android.widget.*
-import androidx.core.widget.doAfterTextChanged
+import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,14 +15,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var tipopessoa: RadioGroup
     lateinit var pessoafisica: RadioButton
     lateinit var pessoajuridica: RadioButton
-    lateinit var pesquisa: EditText
-    lateinit var pesquisar: Button
+
     lateinit var cadastrar: Button
     lateinit var referencia: EditText
     lateinit var email: EditText
     lateinit var listagem: TextView
 
-    private var contatos: MutableList<Pessoa> = mutableListOf()
+    //private var contatos: MutableList<Pessoa> = mutableListOf()
 
     @SuppressLint("StringFormatInvalid")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,10 +36,8 @@ class MainActivity : AppCompatActivity() {
         pessoajuridica = findViewById(R.id.rdPessoaJuridica)
         referencia = findViewById(R.id.edtreferencia)
         email = findViewById(R.id.edtemail)
-        pesquisa = findViewById(R.id.edtPesquisa)
-        pesquisar = findViewById(R.id.btnPesquisar)
         cadastrar = findViewById(R.id.btnCadastrar)
-        listagem = findViewById(R.id.txtListagem)
+        //listagem = findViewById(R.id.txtListagem)
 
 
 
@@ -89,34 +86,19 @@ class MainActivity : AppCompatActivity() {
                 celular.error = getString(R.string.telefoneError)
             }
 
-            listagem.text = ordenarContatos()
+         //   listagem.text = ordenarContatos()
+
+            val intent = Intent (this, SecondActivity::class.java)
+            //intent.putExtra("contatos", ordenarContatos())
+
+            startActivity(intent)
 
         }
 
-        pesquisar.setOnClickListener {
-            val pesquisando = pesquisa.text.toString()
-            //xuxa == contador (do for)
-            val  resultado: List<Pessoa>  = contatos.filter { it.nome.contains(pesquisando) }
-            var resultadoFiltrado: String = ""
-            if (resultado!= null && resultado.isNotEmpty()){
-                resultado.forEach { it -> resultadoFiltrado+= it.toString() }
-                listagem.text = resultadoFiltrado
 
-            }else {
-                Toast.makeText(this,getString(R.string.pesquisaError), Toast.LENGTH_SHORT).show()
-            }
-
-
-        }
-
-        pesquisa.doAfterTextChanged { it ->
-
-            if(pesquisa.text.isEmpty()){
-            listagem.text = ordenarContatos()
-            }
-       }
 
     }
+
 
     private fun ordenarContatos(): String {
         var contatosexibidos1: String =""
@@ -132,9 +114,33 @@ class MainActivity : AppCompatActivity() {
 
         return contatosexibidos1
     }
+    companion object{
+        //val CAMERA_REQUEST_CODE = 14523
+        //val NOME_KEY = "XUXAMENEGHEL"
+        //val STUDENT_KEY = "ALUNA"
+        val contatos =  mutableListOf<Pessoa>()
+        fun ordenarContatos(): List<Pessoa> {
+            var contatosexibidos1: String =""
+            val listaOrdenada = contatos.sortedWith(
+                compareBy(String.CASE_INSENSITIVE_ORDER, { it.nome })
+            )
+
+            for (x in listaOrdenada) {
+                contatosexibidos1 += x.toString()
+
+
+            }
+
+            return listaOrdenada
+        }
+    }
 
 
 }
+
+
+
+
 
 
 
